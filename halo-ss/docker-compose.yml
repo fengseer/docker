@@ -1,0 +1,19 @@
+version: '1'
+services:
+  ss:
+    image: shadowsocks/shadowsocks-libev
+    container_name: "ss"
+    ports:
+      - "989:8388/tcp"
+      - "989:8388/udp"
+    environment:
+      - METHOD=aes-256-cfb
+      - PASSWORD=c99ecff.
+  halo:
+    image: ruibaby/halo
+    container_name: "halo"
+    ports:
+      - "8090:8090"
+    volumes:
+      - ~/data/blog:/root/halo
+
